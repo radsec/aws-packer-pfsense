@@ -12,8 +12,8 @@
 	"<wait5><left>",
 	"<wait5><enter>",
 	"<wait5><enter>",
-  "<wait5><enter>",
-  "<wait10><wait10><wait10><wait10><wait20><enter>",
+    "<wait5><enter>",
+    "<wait10><wait10><wait10><wait10><wait20><enter>",
 	"<wait5><enter>",
 	"<wait20><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10>",
 	"8<wait5><enter>",
@@ -52,10 +52,14 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "config/provision.sh",
+      "script": "config/provision-aws.sh",
       "environment_vars": [
         "IS_AWS=true"
       ]
+    },
+    {
+        "type": "file",
+        "source": ""
     }
   ]
 }
