@@ -76,8 +76,8 @@
       "type": "shell",
       "inline": [
         "cd /tmp",
-        "mv ./tmp/if_ena.ko /boot/kernel/if_ena.ko",
-        "mv ./tmp/nvme.ko /boot/kernel/nvme.ko",
+        "mv /tmp/if_ena.ko /boot/kernel/if_ena.ko",
+        "mv /tmp/nvme.ko /boot/kernel/nvme.ko",
         "/usr/sbin/sysrc -f /boot/loader.conf if_ena_load=YES"
       ]
     }

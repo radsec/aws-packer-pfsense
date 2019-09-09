@@ -2,7 +2,7 @@
 
 # replace <if></if> section of config.xml with proper names for running on AWS EC2
 
-if [[ $IS_AWS ]]; then
+if ${IS_AWS} ; then
     sed -i -E 's$<if>em0</if>$<if>ena0</if>$g' /conf/config.xml
     sed -i -E 's$<if>em1</if>$<if>ena1</if>$g' /conf/config.xml
     sed -i -E 's$<if>em0</if>$<if>ena0</if>$g' /conf.default/config.xml

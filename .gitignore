@@ -2,4 +2,7 @@
 packer-pfsense.iml
 output-*/
 packer_cache/
+FreeBSD_kernel_extractions/FreeBSD_11_2_r345617/boot/kernel-full/
+FreeBSD_kernel_extractions/FreeBSD_12_0_p10/boot/kernel-full/
+FreeBSD_kernel_extractions/FreeBSD_12_0_p10/boot/kernel.old/
 .DS_Store
