@@ -5,19 +5,26 @@
       "http_port_min": "8100",
       "boot_wait": "30s",
       "boot_command": [
+	"<wait10><enter>",
+	"<wait2><enter>",
+	"<wait2><enter>",
+	"<wait2><down>",
+  "<wait2><enter>",
+	"<wait2><left>",
+	"<wait2><enter>",
 	"<wait5><enter>",
+  "<wait2><enter>",
+  "<wait2><enter>",
+  "<wait2><enter>",
+  "<wait10><wait10><wait10><wait10><wait15><enter>",
 	"<wait5><enter>",
-	"<wait5><enter>",
-	"<wait5><down>",
-	"<wait5><left>",
-	"<wait5><enter>",
-	"<wait5><enter>",
-    "<wait5><enter>",
-    "<wait10><wait10><wait10><wait10><wait20><enter>",
-	"<wait5><enter>",
-	"<wait20><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10>",
+	"<wait15><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait15>",
 	"8<wait5><enter>",
-	"curl http://{{ .HTTPIP }}:{{ .HTTPPort }}/config.xml >/conf/config.xml<wait5><enter>",
+	"curl http://{{ .HTTPIP }}:{{ .HTTPPort }}/config.xml >/conf/config.xml<wait7><enter><wait5>",
+  "exit<enter><wait5>",
+  "14<wait5><enter>",
+  "y<wait5><enter>",
+  "8<wait5><enter>",
 	"reboot<wait5><enter>"
       ],
       "disk_size": "4096",
@@ -59,7 +66,24 @@
     },
     {
         "type": "file",
-        "source": ""
+        "source": "input/boot/kernel/if_ena.ko",
+        "destination": "/tmp/if_ena.ko",
+        "direction": "upload"
+    },
+    {
+        "type": "file",
+        "source": "input/boot/kernel/nvme.ko",
+        "destination": "/tmp/nvme.ko",
+        "direction": "upload"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "cd /tmp",
+        "mv ./tmp/if_ena.ko /boot/kernel/if_ena.ko",
+        "mv ./tmp/nvme.ko /boot/kernel/nvme.ko",
+        "/usr/sbin/sysrc -f /boot/loader.conf if_ena_load=YES"
+      ]
     }
   ]
 }
