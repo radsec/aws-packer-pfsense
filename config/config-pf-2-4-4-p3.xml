@@ -64,7 +64,7 @@
 		<primaryconsole>serial</primaryconsole>
 		<ssh>
 			<enable>enabled</enable>
-			<port>6736</port>
+			<port>22</port>
 		</ssh>
 	</system>
 	<interfaces>
