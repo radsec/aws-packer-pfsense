@@ -1,5 +1,5 @@
 {
-    "Description": "pfSense CE 2.4.2",
+    "Description": "pfSense CE 2.4.4 p3",
     "Format": "FORMAT_PLACEHODLER",
     "UserBucket": {
         "S3Bucket": "BUCKET_PLACEHODLER",
